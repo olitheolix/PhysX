@@ -27,6 +27,7 @@
 STRING(TOLOWER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE_LOWERCASE)
 
 #TODO: Fix warnings
+SET(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 SET(CLANG_WARNINGS "-ferror-limit=0 -Wall -Wextra -Werror -Wstrict-aliasing=2 -Weverything\
     -Wno-alloca \
     -Wno-atomic-implicit-seq-cst \
