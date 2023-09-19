@@ -105,7 +105,6 @@ namespace Dy
 			mIntermediatePatches[0].index = 0;
 			PxU16 numPatches = 1;
 			//PxU32 startIndex = 0;
-			PxU32 numUniquePatches = 1;
 			PxU16 m = 1;
 			for(; m < mNumOriginalContacts; ++m)
 			{
@@ -137,7 +136,6 @@ namespace Dy
 						mIntermediatePatches[numPatches].rootNormal = mOriginalContacts[m].normal;
 						mIntermediatePatches[numPatches].maxPenetration = mOriginalContacts[m].separation;
 						mIntermediatePatches[numPatches].index = numPatches;
-						++numUniquePatches;
 					}
 					else
 					{

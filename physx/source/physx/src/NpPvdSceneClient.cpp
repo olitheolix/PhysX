@@ -1193,7 +1193,6 @@ void PvdSceneClient::updateJoints()
 
 		Sc::ConstraintCore*const * constraints = mScene.getScScene().getConstraints();
 		const PxU32 nbConstraints = mScene.getScScene().getNbConstraints();
-		PxI64 constraintCount = 0;
 
 		for(PxU32 i=0; i<nbConstraints; i++)
 		{
@@ -1221,7 +1220,6 @@ void PvdSceneClient::updateJoints()
 					(*constraint->getVisualize())(viz, sim->getConstantsLL(), t0, t1, 0xffffFFFF);
 				}
 			}
-			++constraintCount;
 		}
 
 		mUserRender->flushRenderEvents();

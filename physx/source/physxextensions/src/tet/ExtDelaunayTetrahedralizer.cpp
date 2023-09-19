@@ -151,11 +151,6 @@ namespace Ext
 	//Keep for debugging & verification
 	void validateNeighborhood(const PxArray<Tetrahedron>& tets, PxArray<PxI32>& neighbors)
 	{
-		PxI32 borderCounter = 0;
-		for (PxU32 i = 0; i < neighbors.size(); ++i)
-			if (neighbors[i] == -1)
-				++borderCounter;
-
 		//if (borderCounter != 4)
 		//    throw new Exception();
 

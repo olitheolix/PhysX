@@ -1745,7 +1745,6 @@ void PxsCCDContext::updateCCD(PxReal dt, PxBaseTask* continuation, IG::IslandSim
 	mCCDIslandHistogram.clear(); // number of pairs per island
 	mCCDIslandHistogram.resize(islandCount);
 
-	PxU32 totalActivePairs = 0;
 	for (PxU32 j = 0, n = mCCDPtrPairs.size(); j < n; j++)
 	{
 		const PxU32 staticLabel = 0xFFFFffff;
@@ -1760,7 +1759,6 @@ void PxsCCDContext::updateCCD(PxReal dt, PxBaseTask* continuation, IG::IslandSim
 		p.mIslandId = islandId;
 		mCCDIslandHistogram[p.mIslandId] ++;
 		PX_ASSERT(p.mIslandId != staticLabel);
-		totalActivePairs++;
 	}
 
 	PxU16 count = 0;

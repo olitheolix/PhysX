@@ -1283,7 +1283,6 @@ static void computeBlockStreamByteSizes4(PxTGSSolverContactDesc* descs,
 	PX_ASSERT(0 == _solverConstraintByteSize);
 
 	PxU32 maxPatches = 0;
-	PxU32 maxFrictionPatches = 0;
 	PxU32 maxContactCount[CorrelationBuffer::MAX_FRICTION_PATCHES];
 	PxU32 maxFrictionCount[CorrelationBuffer::MAX_FRICTION_PATCHES];
 	PxMemZero(maxContactCount, sizeof(maxContactCount));
@@ -1318,12 +1317,6 @@ static void computeBlockStreamByteSizes4(PxTGSSolverContactDesc* descs,
 		}
 		maxPatches = PxMax(descs[a].numFrictionPatches, maxPatches);
 		_axisConstraintCount[a] = axisConstraintCount;
-	}
-
-	for (PxU32 a = 0; a < maxPatches; ++a)
-	{
-		if (maxFrictionCount[a] > 0)
-			maxFrictionPatches++;
 	}
 
 	PxU32 totalContacts = 0, totalFriction = 0;

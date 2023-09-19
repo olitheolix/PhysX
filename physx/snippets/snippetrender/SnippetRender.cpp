@@ -1067,7 +1067,6 @@ void renderMesh(physx::PxU32 /*nbVerts*/, const physx::PxU8* verts, const PxU32 
 	{
 		prepareVertexBuffer();
 
-		PxU32 numTotalTriangles = 0;
 		for(PxU32 i=0; i <nbTris; ++i)
 		{
 			const PxU32 vref0 = *indices++;
@@ -1091,7 +1090,6 @@ void renderMesh(physx::PxU32 /*nbVerts*/, const physx::PxU8* verts, const PxU32 
 				fnormal.normalize();
 				pushVertex(v0, v1, v2, fnormal);
 			}
-			numTotalTriangles++;
 		}
 		glScalef(1.0f, 1.0f, 1.0f);
 		glEnableClientState(GL_NORMAL_ARRAY);

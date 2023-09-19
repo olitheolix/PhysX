@@ -118,8 +118,6 @@ namespace physx { namespace Sn {
 
 			if ( theSrcData )
 			{
-				static PxU32 theCount = 0;
-				++theCount;
 				char* theStartData = const_cast< char*>( copyStr( &tempAllocator, theSrcData ) );
 				char* aData = strtok(theStartData, " \n");
 				while( aData )
@@ -151,8 +149,6 @@ namespace physx { namespace Sn {
 
 			if ( theSrcData )
 			{
-				static PxU32 theCount = 0;
-				++theCount;
 				char* theStartData = const_cast< char*>( copyStr( &tempAllocator, theSrcData ) );
 				const char* theData = theStartData;
 				while( !isEmpty(theData) )

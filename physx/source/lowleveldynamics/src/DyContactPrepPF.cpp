@@ -345,15 +345,10 @@ static void computeBlockStreamByteSizesCoulomb(	const CorrelationBuffer& c,
 
 	// PT: use local vars to remove LHS
 	PxU32 solverConstraintByteSize = 0;
-	PxU32 numFrictionPatches = 0;
 	PxU32 axisConstraintCount = 0;
 
 	for(PxU32 i = 0; i < c.frictionPatchCount; i++)
 	{
-		//Friction patches.
-		if(c.correlationListHeads[i] != CorrelationBuffer::LIST_END)
-			numFrictionPatches++;
-
 		const FrictionPatch& frictionPatch = c.frictionPatches[i];
 		const bool haveFriction = (frictionPatch.materialFlags & PxMaterialFlag::eDISABLE_FRICTION) == 0;
 

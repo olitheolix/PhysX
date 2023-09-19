@@ -1528,7 +1528,6 @@ void BoxManager::prepareData(RadixSortBuffered& /*rs*/, ABP_Object* PX_RESTRICT 
 			BpHandle* PX_RESTRICT dstRemap = reinterpret_cast<BpHandle*>(PX_ALLOC(nbTotal*sizeof(BpHandle), "tmp"));
 
 			PxU32 i=0;
-			PxU32 nbRemovedFound=0;
 			PxU32 nbToGo = nbSorted + nbToSort;
 			while(nbToGo--)
 			{
@@ -1543,8 +1542,6 @@ void BoxManager::prepareData(RadixSortBuffered& /*rs*/, ABP_Object* PX_RESTRICT 
 							dstBoxesX[i] = toSortDataX[offsetNonSorted];
 							dstBoxesYZ[i] = toSortDataYZ[offsetNonSorted];
 						}
-						else
-							nbRemovedFound++;
 
 						offsetNonSorted++;
 

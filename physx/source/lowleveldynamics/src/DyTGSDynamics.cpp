@@ -2379,7 +2379,6 @@ public:
 		PxU32 totalCount = 0;
 
 		PxSolverConstraintDesc* contactDescBegin = mObjects.orderedConstraintDescs;
-		PxSolverConstraintDesc* contactDescPtr = contactDescBegin;
 		PxConstraintBatchHeader* headers = mObjects.constraintBatchHeaders;
 
 		PxU32 totalPartitions = 0;
@@ -2406,7 +2405,6 @@ public:
 							contactDescBegin[j] = contactDescBegin[i];
 						i++;
 						j++;
-						contactDescPtr++;
 					}
 				}
 

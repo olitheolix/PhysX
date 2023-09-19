@@ -1465,14 +1465,6 @@ namespace Ext
 				}
 			}
 
-#if PX_DEBUG
-			if (mClusters.size() > 1)
-			{
-				PxI32 abc = 0;
-				++abc;
-			}
-#endif
-
 			for (PxU32 i = 0; i < mClusters.size(); ++i)			
 				PxSort(mClusters[i].begin(), mClusters[i].size());			
 		}

@@ -402,7 +402,6 @@ static bool setupFinalizeSolverConstraintsCoulomb4(PxSolverContactDesc* PX_RESTR
 
 		PxU8* p = ptr;
 
-		PxU32 contactCount = 0;
 		PxU32 newFinished = 
 			(PxU32(hasFinished0 || !iter0.hasNextContact()))		| 
 			((PxU32(hasFinished1 || !iter1.hasNextContact())) << 1) | 
@@ -414,7 +413,6 @@ static bool setupFinalizeSolverConstraintsCoulomb4(PxSolverContactDesc* PX_RESTR
 		while(finished != 0xf)
 		{
 			finished = newFinished;
-			++contactCount;
 			PxPrefetchLine(p, 384);
 			PxPrefetchLine(p, 512);
 			PxPrefetchLine(p, 640);	

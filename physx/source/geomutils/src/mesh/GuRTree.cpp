@@ -277,9 +277,6 @@ void RTree::validateRecursive(PxU32 level, RTreeNodeQ parentBounds, RTreePage* p
 {
 	PX_UNUSED(parentBounds);
 
-	static PxU32 validateCounter = 0; // this is to suppress a warning that recursive call has no side effects
-	validateCounter++;
-
 	RTreeNodeQ n;
 	PxU32 pageNodeCount = page->nodeCount();
 	for (PxU32 j = 0; j < pageNodeCount; j++)

@@ -296,7 +296,6 @@ void TetrahedronMeshBuilder::createGRBMidPhaseAndData(const PxU32 originalTetrah
 
 		PxU8* tetHint = reinterpret_cast<PxU8*>(collisionData.mGRB_tetraSurfaceHint);
 
-		PxU32 triCount = 0;
 		//compute the surface triangles for the tetrahedron mesh
 		for (PxHashMap<SortedTriangleInds, PxU32, SortedTriangleIndsHash>::Iterator iter = triIndsMap.getIterator(); !iter.done(); ++iter)
 		{
@@ -342,8 +341,6 @@ void TetrahedronMeshBuilder::createGRBMidPhaseAndData(const PxU32 originalTetrah
 				}
 
 				tetHint[key.mTetIndex] |= mask;
-
-				triCount++;
 			}
 		}
 			
@@ -1758,14 +1755,6 @@ void TetrahedronMeshBuilder::createCollisionModelMapping(const TetrahedronMeshDa
 				
 			nbSurfaceTets++;
 		}
-	}
-
-	PxU32 numSurfaceVerts = 0;
-	for (PxU32 i = 0; i < nbVerts; ++i)
-	{
-		PxU32 hint = surfaceVertsHint[i];
-		if (hint)
-			numSurfaceVerts++;
 	}
 
 	mappingData.mCollisionSurfaceVertsHint = PX_ALLOCATE(PxU8, nbVerts, "mCollisionSurfaceVertsHint");
